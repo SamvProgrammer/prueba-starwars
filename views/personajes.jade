@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    script(src='angular/angular.min.js')
+    script(src='js/app.js')
+    script(src='js/controlador.js')
+  body(ng-app='iniciar', ng-controller='ctrl_personaje')
+    header
+      h1 Cantidad de personajes: {{cantidad}}
+      h2 {{cargando}}
+    div
+      labe Buscar personaje
+      input(type='text',ng-model="texto", placeholder='buscar personaje...')
+      input(type='button' ,ng-click="submit()", value='Buscar')
+    div
+      div
+        label Ordenar
+        div
+          a(href='http://localhost:8080/principal?ordenar=peso') Peso
+          a(href='http://localhost:8080/principal?ordenar=altura') Tamaño
+          a(href='http://localhost:8080/principal?ordenar=nombre') Nombre
+      table
+        thead
+          tr
+            th Nombre
+            th Ver Personaje
+        tbody
+          tr(ng-repeat='item in personajes')
+            td {{item.name}}
+            td
+              a(href='http://localhost:8080/personaje/{{item.name}}') Ver

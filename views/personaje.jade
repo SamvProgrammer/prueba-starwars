@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Información sobre los personajes
+  body
+    header
+      h1 Personaje: #{objeto.name}
+    div
+      table
+        thead
+          tr
+            th Altura
+            th Color de ojos
+            th Creado
+            th Editado
+        tbody
+          tr
+            td #{objeto.height}
+            td #{objeto.eye_color}
+            td #{objeto.created}
+            td #{objeto.edited}
